@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      - uses: SiqiLu/dotnet-bump-version@master
+        with:
+          version_file: "MyProject/MyProject.csproj"
+          version_mask: "0.0.1.0"
+          version_overwrite: "*.*.*.*"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
