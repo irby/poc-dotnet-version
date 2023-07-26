@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: SiqiLu/dotnet-bump-version@master
         with:
-          version_files: "src/**/MyProject.csproj"
+          version_files: "src/**/*.csproj"
           version_mask: "0.0.1.0"
           version_overwrite: "*.*.*.*"
           github_token: ${{ secrets.GITHUB_TOKEN }}
