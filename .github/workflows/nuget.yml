@@ -13,8 +13,10 @@ jobs:
         with:
           dotnet-version: 6.0.x
       - name: Install dependencies
+        working-directory: ./MyProject
         run: dotnet restore
       - name: Build
+        working-directory: ./MyProject
         run: dotnet build --configuration Release --no-restore
       - uses: SiqiLu/dotnet-bump-version@master
         with:
