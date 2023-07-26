@@ -1,0 +1,94 @@
+Warning: Unexpected input(s) 'version_file', valid inputs are ['version_files', 'version_mask', 'version_overwrite', 'github_token']
+Run SiqiLu/dotnet-bump-version@master
+dotnet-bump-version action is running...
+
+Inputs initializing...
+
+Inputs.versionFiles: **/*.csproj
+Inputs.versionFilesPatterns: ["**/*.csproj"]
+
+Inputs.versionMask: 0.0.1.0
+Inputs.bumpMajor: false
+Inputs.bumpMinor: false
+Inputs.bumpPatch: true
+Inputs.bumpBuild: false
+
+Inputs.versionOverwrite: *.*.*.*
+Inputs.overwriteMajor: false (*)
+Inputs.overwriteMinor: false (*)
+Inputs.overwritePatch: false (*)
+Inputs.overwriteBuild: false (*)
+
+Inputs.needPushChanges: true
+
+versionFiles:
+["MyProject/MyProject.csproj"]
+
+Can not find Version from "MyProject/MyProject.csproj" or the format of the version number is incorrect.
+"MyProject/MyProject.csproj" bump PackageVersion to "1.0.2" from "1.0.1".
+"MyProject/MyProject.csproj" has been marked as "modified".
+Can not find AssemblyVersion from "MyProject/MyProject.csproj" or the format of the version number is incorrect.
+Can not find FileVersion from "MyProject/MyProject.csproj" or the format of the version number is incorrect.
+Can not find InformationalVersion from "MyProject/MyProject.csproj" or the format of the version number is incorrect.
+Bump.bump MyProject/MyProject.csproj overwrited with new versions.
+Bump.bump for MyProject/MyProject.csproj is finishing...
+
+Committing changes with message "Bump versions by dotnet-bump-version.".
+git status
+/usr/bin/git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   MyProject/MyProject.csproj
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git config user.name "irby"
+/usr/bin/git config user.name "irby"
+git config user.email "irby@users.noreply.github.com"
+/usr/bin/git config user.email "irby@users.noreply.github.com"
+git config pull.rebase false
+/usr/bin/git config pull.rebase false
+git remote add publisher ***github.com/irby/poc-dotnet-version.git
+/usr/bin/git remote add publisher ***github.com/irby/poc-dotnet-version.git
+git branch bump_tmp_99e2ce71dc862c9696340c243197bfa25fde99d8
+/usr/bin/git branch bump_tmp_99e2ce71dc862c9696340c243197bfa25fde99d8
+git merge main
+/usr/bin/git merge main
+Already up to date.
+git add "MyProject/MyProject.csproj"
+/usr/bin/git add MyProject/MyProject.csproj
+git status
+/usr/bin/git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   MyProject/MyProject.csproj
+
+git commit -m "Bump versions by dotnet-bump-version."
+/usr/bin/git commit -m Bump versions by dotnet-bump-version.
+[main d4b4af0] Bump versions by dotnet-bump-version.
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+git checkout main
+/usr/bin/git checkout main
+Already on 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+git pull --no-edit --commit --strategy-option theirs publisher main
+/usr/bin/git pull --no-edit --commit --strategy-option theirs publisher main
+From https://github.com/irby/poc-dotnet-version
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> publisher/main
+Already up to date.
+git merge bump_tmp_99e2ce71dc862c9696340c243197bfa25fde99d8
+/usr/bin/git merge bump_tmp_99e2ce71dc862c9696340c243197bfa25fde99d8
+Already up to date.
+git push publisher main
+/usr/bin/git push publisher main
+To https://github.com/irby/poc-dotnet-version.git
+   99e2ce7..d4b4af0  main -> main
+dotnet-bump-version action is finishing...
