@@ -11,6 +11,8 @@ jobs:
       - name: Run scripty
         run: |
           ./ci/scripts/my-script.sh
+      - name: Get tags
+        run: echo "${GITHUB_REF#refs/*/}"
       - uses: SiqiLu/dotnet-bump-version@master
         with:
           version_files: "src/**/*.csproj"
